@@ -51,8 +51,4 @@ public class Movimiento {
         return "Movimiento{" + "fecha=" + fecha + ", saldoPrecedente=" + 
                 saldoPrecedente + ", cantidad=" + cantidad + '}';
     }
-   
-    
-
- 
 }

@@ -7,7 +7,9 @@ package Relaciones1;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
+
 /**
  *
  * @author gipao
@@ -15,17 +17,19 @@ import java.util.GregorianCalendar;
 public class Main {
     
     public static void main(String[] args) {
-    
+   //     GregorianCalendar gc= new GregorianCalendar(2017,4,25);
+     //   System.out.println(gc.getTime());
+        
     Banco banco = new Banco("456778");
     ArrayList<Cuenta>cuentas = new ArrayList();
     ArrayList<Tipo>tipos = new ArrayList();
     
-    Cuenta cuenta1 = new Cuenta(34567, 38.000 , new Date(03,04,2017), "María");
-    Movimiento m11 = new Movimiento (new Date(14,02,2017), 90.000, 20.000);
+    Cuenta cuenta1 = new Cuenta(34567, 38.000 , (new GregorianCalendar(2017,4,25)).getTime(), "María");
+    Movimiento m11 = new Movimiento ((new GregorianCalendar(2017,4,25)).getTime(), 90.000, 20.000);
     Tipo tipo11 = new Tipo("34567", m11);
     tipo11.setMovimientos(m11);
     
-    Movimiento m12 = new Movimiento(new Date(10,02,2017), 105.000, 10.000);
+    Movimiento m12 = new Movimiento((new GregorianCalendar(2017,4,25)).getTime(), 105.000, 10.000);
     Tipo tipo12 = new Tipo("34567", m12);
     tipo12.setMovimientos(m12);
     
@@ -33,12 +37,12 @@ public class Main {
     movimientosC1.add(m11);
     movimientosC1.add(m12);
     
-    Cuenta cuenta2 = new Cuenta(34456, 67.000 , new Date(13/03/2017), "Pepe");
-    Movimiento m21 = new Movimiento (new Date(03,12,2017), 123.000, 20.000);
+    Cuenta cuenta2 = new Cuenta(34456, 67.000 , (new GregorianCalendar(2017,4,25)).getTime(), "Pepe");
+    Movimiento m21 = new Movimiento ((new GregorianCalendar(2017,4,25)).getTime(), 123.000, 20.000);
     Tipo tipo21 = new Tipo ("34456", m21);
     tipo21.setMovimientos(m21);
     
-    Movimiento m22 = new Movimiento (new Date(02,10,2017),345.000,10.000);
+    Movimiento m22 = new Movimiento ((new GregorianCalendar(2017,4,25)).getTime(),345.000,10.000);
     Tipo tipo22 = new Tipo("34567", m22);
     tipo22.setMovimientos(m22);
     
