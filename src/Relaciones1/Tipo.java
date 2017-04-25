@@ -11,11 +11,9 @@ package Relaciones1;
  */
 public class Tipo {
     private String codigo;
-    private Movimiento movimientos;
 
-    public Tipo(String codigo, Movimiento movimientos) {
+    public Tipo(String codigo) {
         this.codigo = codigo;
-        this.movimientos = movimientos;
     }
 
     public String getCodigo() {
@@ -25,14 +23,4 @@ public class Tipo {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
-
-    public Movimiento getMovimientos() {
-        return movimientos;
-    }
-
-    public void setMovimientos(Movimiento movimientos) {
-        this.movimientos = movimientos;
-    }
-    
-    
 }

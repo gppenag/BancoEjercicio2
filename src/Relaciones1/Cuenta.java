@@ -68,9 +68,12 @@ private ArrayList<Movimiento>movimientos;
     }
 
     public double calculartotal(){
-    double total = 0;
+    double total =this.getSaldoCorriente();
         for(Movimiento m: movimientos){
-            total+= (m.getSaldoPrecedente()-m.getCantidad())+this.getSaldoCorriente();
+            if(m.getType().getCodigo().equals("0001"))            
+                total+= m.getCantidad();
+            else if(m.getType().getCodigo().equals("0002"))
+                total-=m.getCantidad();
         }
         return total;
     }

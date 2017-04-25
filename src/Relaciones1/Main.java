@@ -17,50 +17,36 @@ import java.util.GregorianCalendar;
 public class Main {
     
     public static void main(String[] args) {
-   //     GregorianCalendar gc= new GregorianCalendar(2017,4,25);
-     //   System.out.println(gc.getTime());
         
     Banco banco = new Banco("456778");
     ArrayList<Cuenta>cuentas = new ArrayList();
     ArrayList<Tipo>tipos = new ArrayList();
+    Tipo CONSIGNACION=new Tipo("0001");
+    Tipo RETIRO=new Tipo("0002");
+    tipos.add(CONSIGNACION);
+    tipos.add(RETIRO);
+    banco.setTipos(tipos);
     
-    Cuenta cuenta1 = new Cuenta(34567, 38.000 , (new GregorianCalendar(2017,4,25)).getTime(), "María");
-    Movimiento m11 = new Movimiento ((new GregorianCalendar(2017,4,25)).getTime(), 90.000, 20.000);
-    Tipo tipo11 = new Tipo("34567", m11);
-    tipo11.setMovimientos(m11);
-    
-    Movimiento m12 = new Movimiento((new GregorianCalendar(2017,4,25)).getTime(), 105.000, 10.000);
-    Tipo tipo12 = new Tipo("34567", m12);
-    tipo12.setMovimientos(m12);
-    
+    Cuenta cuenta1 = new Cuenta(34567, 38.000 , (new GregorianCalendar(2004,4,25)).getTime(), "María");
+    Movimiento m11 = new Movimiento ((new GregorianCalendar(2004,12,15)).getTime(), cuenta1.getSaldoCorriente(), 20.000,banco.getTipos().get(0));
+    Movimiento m12 = new Movimiento((new GregorianCalendar(2016,8,25)).getTime(), cuenta1.getSaldoCorriente(), 10.000,banco.getTipos().get(1));
+
     ArrayList<Movimiento> movimientosC1=new ArrayList<>();
     movimientosC1.add(m11);
     movimientosC1.add(m12);
     
-    Cuenta cuenta2 = new Cuenta(34456, 67.000 , (new GregorianCalendar(2017,4,25)).getTime(), "Pepe");
-    Movimiento m21 = new Movimiento ((new GregorianCalendar(2017,4,25)).getTime(), 123.000, 20.000);
-    Tipo tipo21 = new Tipo ("34456", m21);
-    tipo21.setMovimientos(m21);
-    
-    Movimiento m22 = new Movimiento ((new GregorianCalendar(2017,4,25)).getTime(),345.000,10.000);
-    Tipo tipo22 = new Tipo("34567", m22);
-    tipo22.setMovimientos(m22);
+    Cuenta cuenta2 = new Cuenta(34456, 67.000 , (new GregorianCalendar(2004,10,12)).getTime(), "Pepe");
+    Movimiento m21 = new Movimiento ((new GregorianCalendar(2005,2,25)).getTime(), 123.000, 20.000,banco.getTipos().get(0));
+    Movimiento m22 = new Movimiento ((new GregorianCalendar(2017,4,25)).getTime(),345.000,10.000, banco.getTipos().get(1));
     
     ArrayList<Movimiento> movimientosC2 = new ArrayList<>();
     movimientosC2.add(m21);
     movimientosC2.add(m22);
-    
-    
-    tipos.add(tipo11);
-    tipos.add(tipo12);
-    tipos.add(tipo21);
-    tipos.add(tipo22);
-    
+   
     
     cuentas.add(cuenta1);
     cuentas.add(cuenta2);
     banco.setCuentas(cuentas);
-    banco.setTipos(tipos);
     cuenta1.setMovimientos(movimientosC1);
     cuenta2.setMovimientos(movimientosC2);
     

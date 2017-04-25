@@ -15,11 +15,21 @@ public class Movimiento {
  private Date fecha;
  private double saldoPrecedente;
  private double cantidad;
+ private Tipo type;
 
-    public Movimiento(Date fecha, double saldoPrecedente, double cantidad) {
+    public Movimiento(Date fecha, double saldoPrecedente, double cantidad, Tipo type) {
         this.fecha = fecha;
         this.saldoPrecedente = saldoPrecedente;
         this.cantidad = cantidad;
+        this.type = type;
+    }
+
+    public Tipo getType() {
+        return type;
+    }
+
+    public void setType(Tipo type) {
+        this.type = type;
     }
 
     public Date getFecha() {
